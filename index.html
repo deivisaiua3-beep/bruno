@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bruno — mažas rudas pudeliukas</title>
+  <meta name="description" content="Bruno yra mažas rudas pudelis. Garbanotas, švelnus ir visada šalia — terasoje, ant sofos ir ant kelių." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,620;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%232A211C'/%3E%3Ccircle cx='32' cy='38' r='10' fill='%23F3EEE6'/%3E%3Ccircle cx='18' cy='22' r='7' fill='%23F3EEE6'/%3E%3Ccircle cx='32' cy='16' r='7' fill='%23F3EEE6'/%3E%3Ccircle cx='46' cy='22' r='7' fill='%23F3EEE6'/%3E%3C/svg%3E" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: "#F6EEE6",
+            paper: "#F8F1E8",
+            ink: "#342218",
+            mute: "#6B5346",
+            caramel: "#E0A86A",
+            cocoa: "#E4C4A0",
+          },
+          fontFamily: {
+            display: ["Fraunces", "Georgia", "serif"],
+            sans: ["Outfit", "ui-sans-serif", "system-ui", "sans-serif"],
+          },
+          boxShadow: {
+            photo: "0 30px 70px -36px rgba(42, 33, 28, 0.55)",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Outfit, ui-sans-serif, system-ui, sans-serif;
+      background:
+        radial-gradient(900px 480px at 100% -10%, rgba(224, 168, 106, 0.16), transparent 58%),
+        radial-gradient(720px 460px at -8% 24%, rgba(92, 52, 32, 0.55), transparent 56%),
+        #342218;
+      color: #F6EEE6;
+    }
+    ::selection { background: #E0A86A; color: #342218; }
+    :focus-visible { outline: 2px solid #E0A86A; outline-offset: 3px; }
+    .font-display { font-optical-sizing: auto; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <a href="#turinys" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-cream">Pereiti prie turinio</a>
+
+  <header class="sticky top-0 z-50 border-b border-cream/10 bg-ink/85 text-cream backdrop-blur-xl">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3.5">
+      <a href="#pradzia" class="flex items-center gap-3">
+        <img src="images/kavine.jpg" alt="" width="768" height="1024" class="h-10 w-10 rounded-full object-cover object-[center_18%] ring-1 ring-cream/20" />
+        <span class="font-display text-2xl leading-none tracking-tight">Bruno</span>
+      </a>
+
+      <nav class="hidden items-center gap-8 text-sm text-cream/75 lg:flex" aria-label="Pagrindinis">
+        <a href="#apie" class="transition hover:text-cream">Apie</a>
+        <a href="#nuotaikos" class="transition hover:text-cream">Nuotaikos</a>
+        <a href="#akimirkos" class="transition hover:text-cream">Akimirkos</a>
+        <a href="#kontaktai" class="transition hover:text-cream">Kontaktai</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="#kontaktai" class="hidden rounded-full bg-cream px-5 py-2.5 text-sm font-medium text-ink shadow-photo transition hover:-translate-y-0.5 hover:bg-caramel sm:inline-flex">Parašyti</a>
+        <button id="menu-btn" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream/20 bg-paper text-ink lg:hidden" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="sr-only">Atidaryti meniu</span>
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path id="menu-icon" stroke-linecap="round" d="M5 8h14M5 16h14" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden border-t border-cream/10 bg-ink lg:hidden">
+      <nav class="mx-auto flex max-w-6xl flex-col px-5 py-3 text-lg text-cream" aria-label="Mobilus">
+        <a href="#apie" class="border-b border-cream/10 py-3">Apie</a>
+        <a href="#nuotaikos" class="border-b border-cream/10 py-3">Nuotaikos</a>
+        <a href="#akimirkos" class="border-b border-cream/10 py-3">Akimirkos</a>
+        <a href="#kontaktai" class="py-3">Kontaktai</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="turinys">
+    <section id="pradzia" class="mx-auto grid max-w-6xl grid-cols-1 items-center gap-0 px-5 pb-20 pt-10 sm:pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-x-16 lg:gap-y-8 lg:pb-28 lg:pt-20">
+      <div class="contents lg:flex lg:flex-col lg:justify-center">
+        <div>
+          <p class="text-xs font-medium uppercase tracking-[0.28em] text-cocoa">Mažas rudas pudelis</p>
+          <h1 class="mt-3 font-display text-6xl font-medium tracking-[-0.045em] text-cream sm:text-8xl lg:text-[6.8rem] lg:leading-[0.88]">Bruno</h1>
+          <p class="mt-3 font-display text-2xl italic text-cocoa sm:text-3xl">garbanotas, šiltas ir visada arti</p>
+        </div>
+
+        <div class="order-3 mt-8 lg:order-none">
+          <p class="max-w-md text-lg font-light leading-relaxed text-cream/75">Jis telpa ant kelių, bet namus užima visus. Karamelinis kailis, tamsios akys ir įprotis būti būtent ten, kur esi tu.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#akimirkos" class="inline-flex items-center justify-center gap-2 rounded-full bg-cream px-7 py-3.5 text-[15px] font-medium text-ink shadow-photo transition hover:-translate-y-0.5 hover:bg-caramel">
+              Žiūrėti akimirkas
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
+            <a href="#kontaktai" class="inline-flex items-center justify-center rounded-full border border-cream/25 px-7 py-3.5 text-[15px] font-medium text-cream transition hover:border-cream/50 hover:bg-cream/10">Parašyti žinutę</a>
+          </div>
+          <dl class="mt-10 grid max-w-lg grid-cols-3 gap-4 border-t border-cream/15 pt-6">
+            <div>
+              <dt class="text-[11px] uppercase tracking-[0.16em] text-cream/55">Spalva</dt>
+              <dd class="mt-1 font-display text-lg leading-tight">Ruda</dd>
+            </div>
+            <div>
+              <dt class="text-[11px] uppercase tracking-[0.16em] text-cream/55">Veislė</dt>
+              <dd class="mt-1 font-display text-lg leading-tight">Pudelis</dd>
+            </div>
+            <div>
+              <dt class="text-[11px] uppercase tracking-[0.16em] text-cream/55">Būdas</dt>
+              <dd class="mt-1 font-display text-lg leading-tight">Mielas</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="relative order-2 mt-7 lg:order-none lg:mt-0">
+        <img
+          src="images/kavine.jpg"
+          alt="Bruno, rudas pudelis su mėlyna petnešėle, žiūri į kamerą kavinės terasoje"
+          width="768"
+          height="1024"
+          class="aspect-[3/4] w-full rounded-[2rem] object-cover shadow-photo ring-1 ring-cream/15"
+        />
+      </div>
+    </section>
+
+    <section id="apie" class="scroll-mt-24 border-t border-cream/10">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:gap-20 lg:py-28">
+        <div class="overflow-hidden rounded-[2rem] shadow-photo ring-1 ring-cream/15">
+          <img
+            src="images/sofa.jpg"
+            alt="Bruno sėdi ant šviesios sofos šalia dryžuoto kauliuko su užrašu Bruno"
+            width="768"
+            height="1024"
+            loading="lazy"
+            class="aspect-[3/4] w-full object-cover"
+          />
+        </div>
+        <div>
+          <p class="text-xs font-medium uppercase tracking-[0.28em] text-cocoa">Apie Bruno</p>
+          <h2 class="mt-4 font-display text-4xl font-medium tracking-[-0.03em] text-cream sm:text-5xl lg:text-6xl lg:leading-[1.02]">Šuniukas, kuris moka būti šalia</h2>
+          <div class="mt-6 space-y-4 text-lg font-light leading-relaxed text-cream/75">
+            <p>Bruno yra mažas rudas pudelis. Jo kailis garbanotas ir karamelinis, akys tamsios, o būdas švelnus, smalsus ir labai artimas.</p>
+            <p>Terasoje jis sėdi prie stalo kaip tikras svečias. Namie grįžta ten, kur ramiausia: ant sofos arba ant kelių. Šalia guli kauliukas su išsiuvinėtu vardu, tad suklysti neįmanoma. Tai Bruno.</p>
+          </div>
+          <a href="#nuotaikos" class="mt-8 inline-flex items-center gap-2 text-sm font-medium text-cream underline decoration-caramel decoration-2 underline-offset-4 transition hover:text-cocoa">
+            Trys jo nuotaikos
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M6 13l6 6 6-6" /></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="nuotaikos" class="scroll-mt-24 bg-[#24160F] text-cream">
+      <div class="mx-auto max-w-6xl px-5 py-20 lg:py-28">
+        <div class="max-w-2xl">
+          <p class="text-xs font-medium uppercase tracking-[0.28em] text-caramel">Nuotaikos</p>
+          <h2 class="mt-4 font-display text-4xl font-medium tracking-[-0.03em] sm:text-5xl">Ta pati ruda, trys skirtingos šviesos</h2>
+        </div>
+        <div class="mt-14 divide-y divide-white/15 border-y border-white/15">
+          <article class="grid gap-3 py-8 md:grid-cols-12 md:items-baseline md:gap-6">
+            <p class="font-display text-3xl text-caramel md:col-span-2">01</p>
+            <h3 class="font-display text-3xl md:col-span-4">Terasa</h3>
+            <p class="text-lg font-light leading-relaxed text-cream/75 md:col-span-6">Mėlyna petnešėlė, pakelta letenėlė ir žvilgsnis, kuris sustabdo pokalbį. Prie stalo jis jaučiasi kaip svečias, kurio laukta.</p>
+          </article>
+          <article class="grid gap-3 py-8 md:grid-cols-12 md:items-baseline md:gap-6">
+            <p class="font-display text-3xl text-caramel md:col-span-2">02</p>
+            <h3 class="font-display text-3xl md:col-span-4">Sofa</h3>
+            <p class="text-lg font-light leading-relaxed text-cream/75 md:col-span-6">Šviesus langas, šviesi sofa ir kauliukas, ant kurio išsiuvinėta jo vardas. Čia jis sėdi tiesiai, smalsiai ir labai savo vietoje.</p>
+          </article>
+          <article class="grid gap-3 py-8 md:grid-cols-12 md:items-baseline md:gap-6">
+            <p class="font-display text-3xl text-caramel md:col-span-2">03</p>
+            <h3 class="font-display text-3xl md:col-span-4">Pogulis</h3>
+            <p class="text-lg font-light leading-relaxed text-cream/75 md:col-span-6">Kai vakaras nurimsta, Bruno randa šilčiausią vietą — ant kelių. Garbanos sukrenta, akys užsimerkia, kambarys tampa tylesnis.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="akimirkos" class="scroll-mt-24">
+      <div class="mx-auto max-w-6xl px-5 py-20 lg:py-28">
+        <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+          <div>
+            <p class="text-xs font-medium uppercase tracking-[0.28em] text-cocoa">Akimirkos</p>
+            <h2 class="mt-4 font-display text-4xl font-medium tracking-[-0.03em] text-cream sm:text-5xl">Tikros jo dienos</h2>
+          </div>
+          <p class="max-w-sm text-cream/70">Keturi kadrai: terasa, sofa, smalsus žvilgsnis namie ir pogulis ant kelių.</p>
+        </div>
+
+        <div class="mt-12 grid gap-4 sm:grid-cols-2">
+          <div class="overflow-hidden rounded-[1.7rem] shadow-photo ring-1 ring-cream/15">
+            <img src="images/sofa.jpg" alt="Bruno sėdi ant sofos ir šypsosi, priešais jį kauliukas su vardu" width="768" height="1024" loading="lazy" class="aspect-[3/4] w-full object-cover transition duration-700 hover:scale-[1.03]" />
+          </div>
+          <div class="overflow-hidden rounded-[1.7rem] shadow-photo ring-1 ring-cream/15">
+            <img src="images/kavine.jpg" alt="Bruno iš arti kavinės terasoje, su mėlyna petnešėle" width="768" height="1024" loading="lazy" class="aspect-[3/4] w-full object-cover transition duration-700 hover:scale-[1.03]" />
+          </div>
+          <div class="overflow-hidden rounded-[1.7rem] shadow-photo ring-1 ring-cream/15">
+            <img src="images/ziurejimas.jpg" alt="Bruno sėdi ant mėlynos antklodės ir žiūri į šoną" width="576" height="1024" loading="lazy" class="aspect-[3/4] w-full object-cover object-[center_22%] transition duration-700 hover:scale-[1.03]" />
+          </div>
+          <div class="overflow-hidden rounded-[1.7rem] shadow-photo ring-1 ring-cream/15">
+            <img src="images/pogulis.jpg" alt="Bruno miega susirangęs ant kelių svetainėje" width="576" height="1024" loading="lazy" class="aspect-[3/4] w-full object-cover object-[center_46%] transition duration-700 hover:scale-[1.03]" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontaktai" class="scroll-mt-24 border-t border-cream/10">
+      <div class="mx-auto grid max-w-6xl gap-12 px-5 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:py-28">
+        <div>
+          <p class="text-xs font-medium uppercase tracking-[0.28em] text-cocoa">Kontaktai</p>
+          <h2 class="mt-4 font-display text-4xl font-medium tracking-[-0.03em] text-cream sm:text-5xl lg:text-6xl lg:leading-[1.02]">Parašyk Brunui</h2>
+          <p class="mt-6 text-lg font-light leading-relaxed text-cream/75">Jei nori pasisveikinti, pagirti garbanas ar tiesiog pasakyti, koks jis mielas — palik žinutę. Jis neatrašys pats, bet uodegytė tikrai turėtų vizgėti.</p>
+          <ul class="mt-10 space-y-4 text-sm">
+            <li class="flex items-center justify-between border-b border-cream/15 pb-4">
+              <span class="text-cream/60">Vardas</span>
+              <span class="font-medium">Bruno</span>
+            </li>
+            <li class="flex items-center justify-between border-b border-cream/15 pb-4">
+              <span class="text-cream/60">Veislė</span>
+              <span class="font-medium">Pudelis</span>
+            </li>
+            <li class="flex items-center justify-between border-b border-cream/15 pb-4">
+              <span class="text-cream/60">Spalva</span>
+              <span class="font-medium">Karamelinė ruda</span>
+            </li>
+            <li class="flex items-center justify-between pb-1">
+              <span class="text-cream/60">Mėgstamiausia vieta</span>
+              <span class="font-medium">Šalia tavęs</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="rounded-[2rem] bg-paper p-6 text-ink shadow-photo ring-1 ring-cream/10 sm:p-8 lg:p-10">
+          <div class="mb-8 flex items-center gap-4">
+            <img src="images/ziurejimas.jpg" alt="" width="576" height="1024" class="h-14 w-14 rounded-full object-cover object-[center_20%] ring-1 ring-ink/10" />
+            <div>
+              <p class="font-display text-2xl">Žinutė Brunui</p>
+              <p class="text-sm text-mute">Trys laukeliai ir viena šilta žinutė</p>
+            </div>
+          </div>
+
+          <form id="contact-form" novalidate>
+            <div class="space-y-5">
+              <div>
+                <label for="vardas" class="mb-2 block text-sm font-medium">Tavo vardas</label>
+                <input id="vardas" name="vardas" type="text" autocomplete="name" placeholder="Kaip tave vadinti?" class="w-full rounded-2xl border border-transparent bg-cream px-4 py-3.5 text-base outline-none transition placeholder:text-ink/35 focus:border-caramel focus:bg-white" />
+                <p data-error class="mt-2 min-h-5 text-sm text-[#9A3B2F]"></p>
+              </div>
+              <div>
+                <label for="pastas" class="mb-2 block text-sm font-medium">El. paštas</label>
+                <input id="pastas" name="pastas" type="email" autocomplete="email" inputmode="email" placeholder="vardas@pastas.lt" class="w-full rounded-2xl border border-transparent bg-cream px-4 py-3.5 text-base outline-none transition placeholder:text-ink/35 focus:border-caramel focus:bg-white" />
+                <p data-error class="mt-2 min-h-5 text-sm text-[#9A3B2F]"></p>
+              </div>
+              <div>
+                <label for="zinute" class="mb-2 block text-sm font-medium">Žinutė</label>
+                <textarea id="zinute" name="zinute" rows="5" placeholder="Parašyk Brunui ką nors švelnaus..." class="w-full resize-none rounded-2xl border border-transparent bg-cream px-4 py-3.5 text-base outline-none transition placeholder:text-ink/35 focus:border-caramel focus:bg-white"></textarea>
+                <p data-error class="mt-2 min-h-5 text-sm text-[#9A3B2F]"></p>
+              </div>
+            </div>
+            <button type="submit" class="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-7 py-4 text-[15px] font-medium text-cream transition hover:-translate-y-0.5 hover:bg-caramel hover:text-ink">
+              Siųsti žinutę
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </button>
+            <p class="mt-4 text-center text-xs text-mute">Žinutė lieka šiame puslapyje — kaip pasisveikinimas, ne kaip laiškas.</p>
+          </form>
+
+          <div id="form-success" class="hidden py-10 text-center" role="status">
+            <img src="images/pogulis.jpg" alt="" width="576" height="1024" class="mx-auto h-20 w-20 rounded-full object-cover object-[center_42%] ring-1 ring-ink/10" />
+            <h3 class="mt-6 font-display text-4xl">Ačiū.</h3>
+            <p id="success-text" class="mx-auto mt-3 max-w-sm text-lg font-light leading-relaxed text-mute"></p>
+            <button id="form-reset" type="button" class="mt-8 inline-flex items-center justify-center rounded-full border border-ink/15 px-6 py-3 text-sm font-medium transition hover:border-ink/40 hover:bg-cream">Rašyti dar vieną</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-cream/10">
+    <div class="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 sm:flex-row sm:items-center sm:justify-between">
+      <div class="flex items-center gap-3">
+        <img src="images/sofa.jpg" alt="" width="768" height="1024" class="h-10 w-10 rounded-full object-cover object-[center_42%] ring-1 ring-cream/20" />
+        <p class="font-display text-xl">Bruno</p>
+      </div>
+      <p class="text-sm text-cream/65">Mažas rudas pudeliukas · 2026</p>
+      <a href="#pradzia" class="text-sm font-medium underline decoration-caramel decoration-2 underline-offset-4">Į viršų</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    const menuIcon = document.getElementById("menu-icon");
+
+    function setMenu(open) {
+      menu.classList.toggle("hidden", !open);
+      menuBtn.setAttribute("aria-expanded", String(open));
+      menuBtn.querySelector(".sr-only").textContent = open ? "Uždaryti meniu" : "Atidaryti meniu";
+      menuIcon.setAttribute("d", open ? "M7 7l10 10M17 7L7 17" : "M5 8h14M5 16h14");
+    }
+
+    menuBtn.addEventListener("click", () => {
+      setMenu(menu.classList.contains("hidden"));
+    });
+
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => setMenu(false));
+    });
+
+    const form = document.getElementById("contact-form");
+    const success = document.getElementById("form-success");
+    const successText = document.getElementById("success-text");
+    const resetBtn = document.getElementById("form-reset");
+
+    function fieldError(input) {
+      return input.parentElement.querySelector("[data-error]");
+    }
+
+    function showError(input, message) {
+      fieldError(input).textContent = message;
+      input.setAttribute("aria-invalid", message ? "true" : "false");
+      input.classList.toggle("ring-2", Boolean(message));
+      input.classList.toggle("ring-[#9A3B2F]/50", Boolean(message));
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const name = form.vardas;
+      const email = form.pastas;
+      const message = form.zinute;
+      const nameValue = name.value.trim();
+      const emailValue = email.value.trim();
+      const messageValue = message.value.trim();
+      let valid = true;
+
+      if (nameValue.length < 2) {
+        showError(name, "Įrašyk savo vardą.");
+        valid = false;
+      } else {
+        showError(name, "");
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+        showError(email, "Reikia teisingo el. pašto.");
+        valid = false;
+      } else {
+        showError(email, "");
+      }
+
+      if (messageValue.length < 8) {
+        showError(message, "Parašyk bent porą žodžių.");
+        valid = false;
+      } else {
+        showError(message, "");
+      }
+
+      if (!valid) {
+        form.querySelector("[aria-invalid='true']").focus();
+        return;
+      }
+
+      successText.textContent = nameValue + ", Bruno šitos žinutės neperskaitys pats, bet jei būtų šalia — uodegytė jau vizgėtų.";
+      form.classList.add("hidden");
+      success.classList.remove("hidden");
+    });
+
+    resetBtn.addEventListener("click", () => {
+      form.reset();
+      form.querySelectorAll("[aria-invalid]").forEach((input) => showError(input, ""));
+      success.classList.add("hidden");
+      form.classList.remove("hidden");
+      form.vardas.focus();
+    });
+  </script>
+</body>
+</html>
